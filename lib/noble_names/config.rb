@@ -1,6 +1,6 @@
 module NobleNames
   class << self
-    attr_accessor :configuration
+    attr_writer :configuration
 
     def configuration
       @configuration ||= Configuration.new
@@ -19,7 +19,7 @@ module NobleNames
     end
 
     def languages=(languages)
-      @languages = languages.respond_to?(:each) ? languages : [languages]
+      @languages = Array(languages)
     end
 
     def languages
