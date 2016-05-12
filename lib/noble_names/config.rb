@@ -14,14 +14,16 @@ module NobleNames
   end
 
   class Configuration
-    attr_reader :languages
-
     def initialize
-      @languages = [:english, :german]
+      @languages = [:all]
     end
 
     def languages=(languages)
       @languages = languages.respond_to?(:each) ? languages : [languages]
+    end
+
+    def languages
+      @languages == [:all] ? SUPPORTED_LANGUAGES : @languages
     end
   end
 end

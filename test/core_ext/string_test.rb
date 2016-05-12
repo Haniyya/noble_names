@@ -3,7 +3,7 @@ require_relative '../test_helper.rb'
 class StringTest < Minitest::Test
   def setup
     NobleNames.configure do |config|
-      config.languages = [:german]
+      config.languages = :all
     end
   end
 
@@ -44,5 +44,16 @@ class StringTest < Minitest::Test
 
     assert_equal 'James of Windsor',
                  'james of windsor'.to_title
+  end
+
+  def test_single_language
+    NobleNames.configure do |config|
+      config.languages = :french
+    end
+
+    assert_equal 'vattier de rideaux'.to_title,
+                 'Vattier de Rideaux'
+    assert_equal 'paul von reinbeck'.to_title ,
+                 'Paul Von Reinbeck'
   end
 end
