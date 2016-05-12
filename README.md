@@ -1,8 +1,6 @@
 # NobleNames
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/noble_names`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A small Gem to capitalize names with regard to nobility particles.
 
 ## Installation
 
@@ -44,7 +42,7 @@ By default all available languages are used. If you want to configure which one
 to use for your application, you can do it like so:
 ```ruby
 NobleNames.configure do |config|
-  config.languages = :english
+  config.languages = [:english,:spanish]
 end
 ```
 This way other language particles will be ignored.
