@@ -13,6 +13,8 @@ particles:
     - 'de'
   french:
     - 'de'
+    - 'le'
+    - 'la'
   spanish:
     - 'de'
     - 'da'
