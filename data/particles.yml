@@ -10,5 +10,15 @@ particles:
     - 'dem'
   english:
     - 'of'
+    - 'de'
+  french:
+    - 'de'
+  spanish:
+    - 'de'
+    - 'da'
+  portuguese:
+    - 'de'
+    - 'da'
+    - 'du'
 
 
