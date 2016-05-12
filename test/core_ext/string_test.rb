@@ -53,7 +53,7 @@ class StringTest < Minitest::Test
 
     assert_equal 'vattier de rideaux'.to_title,
                  'Vattier de Rideaux'
-    assert_equal 'paul von reinbeck'.to_title ,
+    assert_equal 'paul von reinbeck'.to_title,
                  'Paul Von Reinbeck'
   end
 end
