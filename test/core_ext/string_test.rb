@@ -16,12 +16,33 @@ class StringTest < Minitest::Test
   end
 
   def test_german_normal_name
-    assert_equal "paul martensen",
-      "Paul Martensen".to_title
+    assert_equal "Paul Martensen",
+      "paul martensen".to_title
   end
 
   def test_german_noble_name
-    assert_equal "paul von bramstedt",
-      "Paul von Bramstedt".to_title
+    assert_equal "Paul von Bramstedt",
+      "paul von bramstedt".to_title
+  end
+
+  def test_more_complex_german_name
+    assert_equal "Paul von und zu Hoffenstadt der Vierte",
+      "paul von und zu hoffenstadt der vierte".to_title
+  end
+
+  def test_replacer_method
+    string = "paul von kiel"
+    string.to_title!
+    assert_equal "Paul von Kiel",
+      string
+  end
+
+  def test_english_title
+    NobleNames.configure do |config|
+      config.languages = :english
+    end
+
+    assert_equal "James of Windsor",
+      "james of windsor".to_title
   end
 end
