@@ -25,4 +25,3 @@ module NobleNames
     end
   end
 end
-
