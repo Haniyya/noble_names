@@ -10,8 +10,9 @@ Gem::Specification.new do |spec|
   spec.email         = ['paul.martensen@gmx.de']
 
   spec.summary       = 'A gem that titleizes strings while respecting certain linguistic differences.'
-  spec.description   = ''
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.description   = 'This Gem uses a list of nobility particles to keep track of what to 
+  capitalize and what not.'
+  spec.homepage      = 'https://github.com/Haniyya/noble_names'
   spec.license       = 'MIT'
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
