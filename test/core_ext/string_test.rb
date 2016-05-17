@@ -37,6 +37,11 @@ class StringTest < Minitest::Test
                  string
   end
 
+  def test_does_not_mess_up_mutated_vowels
+    assert_equal 'Rudolf von der Höhe',
+                 'rudolf von der höhe'.to_title
+  end
+
   def test_english_title
     NobleNames.configure do |config|
       config.languages = :english
