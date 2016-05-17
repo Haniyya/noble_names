@@ -10,24 +10,9 @@ module NobleNames
       end
 
       def to_title!
-        words = split(/\W+/)
-        words.map! do |w|
-          noble_capitalize(w)
-        end
+        words = split(/\s+/)
+        words.map! { |w| NobleNames.noble_capitalize(w) }
         replace(words * ' ')
-      end
-
-      private
-
-      def noble_capitalize(word)
-        in_particle_list?(word) ? word : word.capitalize
-      end
-
-      def in_particle_list?(word)
-        particles = PARTICLES
-                    .select { |lang| NobleNames.configuration.languages.include?(lang.to_sym) }
-                    .values.flatten
-        particles.include? word
       end
     end
   end
