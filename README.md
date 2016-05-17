@@ -37,7 +37,7 @@ my_string                                 #=> "Joseph von und zu Reinbeck"
 ```
 
 ### Languages
-So far only English and German are supported.
+So far English, German, French, Spanish and Portuguese are supported.
 By default all available languages are used. If you want to configure which one
 to use for your application, you can do it like so:
 ```ruby
@@ -54,14 +54,17 @@ This way other language particles will be ignored.
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+To install this gem onto your local machine, run `bundle exec rake install`. 
 
 ## Contributing
+Fork it ( https://github.com/Haniyya/noble_names/fork )
+Create your feature branch (git checkout -b my-new-feature)
+Commit your changes (git commit -am 'Add some feature')
+Push to the branch (git push origin my-new-feature)
+Create a new Pull Request
 
 To add more particles from other languages, just add them to the
 `data/particles.yml` file.
-Bug reports and pull requests are welcome on GitHub at https://github.com/Haniyya/noble_names.
-
 
 ## License
 
