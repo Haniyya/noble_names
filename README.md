@@ -57,11 +57,11 @@ After checking out the repo, run `bin/setup` to install dependencies. Then, run 
 To install this gem onto your local machine, run `bundle exec rake install`. 
 
 ## Contributing
-Fork it ( https://github.com/Haniyya/noble_names/fork )
-Create your feature branch (git checkout -b my-new-feature)
-Commit your changes (git commit -am 'Add some feature')
-Push to the branch (git push origin my-new-feature)
-Create a new Pull Request
+- Fork it ( https://github.com/Haniyya/noble_names/fork )
+- Create your feature branch (git checkout -b my-new-feature)
+- Commit your changes (git commit -am 'Add some feature')
+- Push to the branch (git push origin my-new-feature)
+- Create a new Pull Request
 
 To add more particles from other languages, just add them to the
 `data/particles.yml` file.
