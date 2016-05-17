@@ -1,5 +1,11 @@
 require_relative 'core_ext/string.rb'
 
-String.class_eval do
-  include NobleNames::CoreExt::String
+module NobleNames
+  # This is wrapped in a method so it isn't immediatly
+  # evaluated when its loaded
+  def self.initialize
+    String.class_eval do
+      include NobleNames::CoreExt::String
+    end
+  end
 end
