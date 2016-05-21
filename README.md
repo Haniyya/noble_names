@@ -1,4 +1,5 @@
 # NobleNames
+[![Build Status](https://travis-ci.org/Haniyya/noble_names.svg?branch=master)](https://travis-ci.org/Haniyya/noble_names)
 
 A small Gem to capitalize names with regard to nobility particles.
 
