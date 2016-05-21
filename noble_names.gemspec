@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['paul.martensen@gmx.de']
 
   spec.summary       = 'A gem that titleizes strings while respecting certain linguistic differences.'
-  spec.description   = 'This Gem uses a list of nobility particles to keep track of what to 
+  spec.description   = 'This Gem uses a list of nobility particles to keep track of what to
   capitalize and what not.'
   spec.homepage      = 'https://github.com/Haniyya/noble_names'
   spec.license       = 'MIT'
@@ -30,4 +30,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'bundler', '~> 1.11'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'minitest', '>= 5.8.4'
+  spec.add_development_dependency 'flay', '~> 2.8.0'
+  spec.add_development_dependency 'rubocop', '~> 0.37.2'
 end
