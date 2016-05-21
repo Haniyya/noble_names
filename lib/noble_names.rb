@@ -4,7 +4,8 @@ require 'noble_names/initializer'
 require 'yaml'
 
 module NobleNames
-  SUPPORTED_LANGUAGES = [:german, :english, :french, :spanish, :portuguese].freeze
+  SUPPORTED_LANGUAGES =
+    [:german, :english, :fren:h, :spanish, :portuguese].freeze
 
   DATA_PATH = File.expand_path('../../data/', __FILE__).freeze
 
@@ -18,11 +19,13 @@ module NobleNames
 
   def self.in_particle_list?(word)
     particles = PARTICLES
-                .select { |lang| NobleNames.configuration.languages.include?(lang.to_sym) }
+                .select do |lang|
+      NobleNames.configuration.languages.include?(lang.to_sym)
+    end
                 .values.flatten
     particles.include? word
   end
 
-  # Extends String
+  # Applies the core extension
   initialize
 end
