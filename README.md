@@ -67,6 +67,18 @@ To install this gem onto your local machine, run `bundle exec rake install`.
 To add more particles from other languages, just add them to the
 `data/particles.yml` file.
 
+## Compatability
+This gem has no runtime-dependencies outside of the standard library and is
+therefore compatible with the following ruby versions:
+
+- jruby
+- 2.3.0
+- 2.2.4
+- 2.2.1
+- 1.9.3
+
+Other verions might work to but are not tested in ci so far.
+
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
