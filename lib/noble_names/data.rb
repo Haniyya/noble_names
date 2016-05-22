@@ -1,9 +1,11 @@
 require 'yaml'
 
 module NobleNames
+  # The module responsible for maintaining and delivering
+  # the match data as defined in the `data` directory.
   module Data
     DATA_PATH = File.expand_path('../../../data/', __FILE__).freeze
-    MATCH_DATA =  Hash[Dir.glob(DATA_PATH + '/*.yml').collect do |f|
+    MATCH_DATA = Hash[Dir.glob(DATA_PATH + '/*.yml').collect do |f|
       yaml = YAML.load_file(f)
       yaml.first
     end]
@@ -16,11 +18,9 @@ module NobleNames
       select_languages(MATCH_DATA['prefixes'])
     end
 
-    private
-
     def self.select_languages(collection)
       collection
-        .select { |lang| NobleNames.configuration.languages.include? lang.to_sym }
+        .select { |l| NobleNames.configuration.languages.include? l.to_sym }
         .values
         .flatten
     end

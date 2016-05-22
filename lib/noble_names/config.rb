@@ -1,5 +1,8 @@
 # :nodoc:
 module NobleNames
+  SUPPORTED_LANGUAGES =
+    [:german, :english, :french, :spanish, :portuguese].freeze
+
   class << self
     attr_writer :configuration
 
