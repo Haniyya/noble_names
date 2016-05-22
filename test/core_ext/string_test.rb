@@ -18,29 +18,29 @@ class StringTest < Minitest::Test
 
   def test_german_normal_name
     assert_equal 'Paul Martensen',
-                 'paul martensen'.to_title
+      'paul martensen'.to_title
   end
 
   def test_german_noble_name
     assert_equal 'Paul von Bramstedt',
-                 'paul von bramstedt'.to_title
+      'paul von bramstedt'.to_title
   end
 
   def test_more_complex_german_name
     assert_equal 'Paul von und zu Hoffenstadt der Vierte',
-                 'paul von und zu hoffenstadt der vierte'.to_title
+      'paul von und zu hoffenstadt der vierte'.to_title
   end
 
   def test_replacer_method
     string = 'paul von kiel'
     string.to_title!
     assert_equal 'Paul von Kiel',
-                 string
+      string
   end
 
   def test_does_not_mess_up_mutated_vowels
     assert_equal 'Rudolf von der Höhe',
-                 'rudolf von der höhe'.to_title
+      'rudolf von der höhe'.to_title
   end
 
   def test_english_title
@@ -49,7 +49,7 @@ class StringTest < Minitest::Test
     end
 
     assert_equal 'James of Windsor',
-                 'james of windsor'.to_title
+      'james of windsor'.to_title
   end
 
   def test_single_language
@@ -58,8 +58,13 @@ class StringTest < Minitest::Test
     end
 
     assert_equal 'vattier de rideaux'.to_title,
-                 'Vattier de Rideaux'
+      'Vattier de Rideaux'
     assert_equal 'paul von reinbeck'.to_title,
-                 'Paul Von Reinbeck'
+      'Paul Von Reinbeck'
+  end
+
+  def test_prefix_functionality
+    assert_equal 'james mcdormer'.to_title,
+      'James McDormer'
   end
 end
