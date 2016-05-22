@@ -9,13 +9,15 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Paul Martensen']
   spec.email         = ['paul.martensen@gmx.de']
 
-  spec.summary       <<-SUM
+  spec.summary = <<-SUM
     A gem that titleizes strings while respecting certain linguistic differences.
   SUM
-  spec.description <<-DESC
+
+  spec.description = <<-DESC
     This Gem uses a list of nobility particles to keep track of what to
     capitalize and what not.
   DESC
+
   spec.homepage      = 'https://github.com/Haniyya/noble_names'
   spec.license       = 'MIT'
 
