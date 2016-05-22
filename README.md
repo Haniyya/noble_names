@@ -1,7 +1,7 @@
 # NobleNames
 [![Build Status](https://travis-ci.org/Haniyya/noble_names.svg?branch=master)](https://travis-ci.org/Haniyya/noble_names)
 
-A small Gem to capitalize names with regard to nobility particles.
+A small Gem to capitalize names with regard to nobility particles and prefixes.
 
 ## Installation
 
@@ -27,14 +27,15 @@ require 'noble_names'
 ```
 and use `String#to_title` to correctly format your names.
 ```ruby
-"james of windsor".to_title #=> "James of Windsor"
+"james of windsor".to_title           #=> "James of Windsor"
 "joseph von und zu reinbeck".to_title #=> "Joseph von und zu Reinbeck"
+"tywin mclannister".to_title          #=> "Tywin McLannister"
 ```
 you can also use the bang method:
 ```ruby
 my_string = "joseph von und zu reinbeck"
 my_string.to_title!
-my_string                                 #=> "Joseph von und zu Reinbeck"
+my_string                             #=> "Joseph von und zu Reinbeck"
 ```
 
 ### Languages
@@ -64,8 +65,8 @@ To install this gem onto your local machine, run `bundle exec rake install`.
 - Push to the branch (git push origin my-new-feature)
 - Create a new Pull Request
 
-To add more particles from other languages, just add them to the
-`data/particles.yml` file.
+To add more particles or prefixes from other languages, just add them to the
+`data/particles.yml` or `data/prefixes.yml` file respectively.
 
 ## Compatability
 This gem has no runtime-dependencies outside of the standard library and is
