@@ -1,5 +1,6 @@
 require_relative 'core_ext/string.rb'
 
+# :nodoc:
 module NobleNames
   # This is wrapped in a method so it isn't immediatly
   # evaluated when its loaded
