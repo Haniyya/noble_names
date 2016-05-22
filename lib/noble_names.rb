@@ -1,18 +1,15 @@
 require 'noble_names/version'
 require 'noble_names/config'
 require 'noble_names/initializer'
+require 'noble_names/data'
 require 'yaml'
 
 # {include:file:README.md}
 module NobleNames
+  extend Forwardable
+
   SUPPORTED_LANGUAGES =
     [:german, :english, :french, :spanish, :portuguese].freeze
-
-  DATA_PATH = File.expand_path('../../data/', __FILE__).freeze
-
-  PARTICLES = YAML.load_file(File.expand_path(
-                               'particles.yml', DATA_PATH
-  ))['particles'].freeze
 
   # Capitalizes a word if it needs to be capitalized.
   # @param [String] word the word that needs to be capitalized.
@@ -26,12 +23,14 @@ module NobleNames
   # @return [Boolean] `true` if `word` is in the particle_list,
   #   `false` otherwise.
   def self.in_particle_list?(word)
-    particles = PARTICLES
-                .select do |lang|
-                  NobleNames.configuration.languages.include?(lang.to_sym)
-                end
-                .values.flatten
-    particles.include? word
+    Data.particles.include? word
+  end
+
+  def self.prefix?(word)
+    Data.prefixes.each do |pre|
+      return pre if (word =~ Regex(pre)) == 0
+    end
+    return nil
   end
 
   # Applies the core extension
