@@ -3,7 +3,8 @@ require 'noble_names/config'
 require 'noble_names/initializer'
 require 'noble_names/data'
 
-# {include:file:README.md}
+# The main Module that has all necessary functions to
+# process names.
 module NobleNames
   # Capitalizes a word if it needs to be capitalized.
   # @param [String] word the word that needs to be capitalized.
