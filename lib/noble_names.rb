@@ -1,3 +1,4 @@
+# Coding: UTF-8
 require 'noble_names/version'
 require 'noble_names/config'
 require 'noble_names/initializer'
@@ -37,7 +38,6 @@ module NobleNames
   # Upcases a letter even if it is a german mutated vowel.
   # @return [String] letter the upcased letter.
   # @example
-  #   upcase('ä')         #=> 'Ä'
   #   upcase('t')         #=> 'T'
   def self.upcase(letter)
     match = letter.match(/ä|ö|ü/)
