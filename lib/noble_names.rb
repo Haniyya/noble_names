@@ -63,7 +63,7 @@ module NobleNames
   # @return [Boolean] `true` if `word` is in the particle_list,
   #   `false` otherwise.
   def self.in_particle_list?(word)
-    Data.particles.include? word
+    Data.nobility_particles.include? word
   end
 
   # Checks weither a word has a prefix as defined in
@@ -74,7 +74,7 @@ module NobleNames
   # @example
   #   prefix?('james mcdormer')           #=> 'mc'
   def self.prefix?(word)
-    Data.prefixes.each do |pre|
+    Data.nobility_prefixes.each do |pre|
       return pre if (word =~ Regexp.new(pre)) == 0
     end
     nil

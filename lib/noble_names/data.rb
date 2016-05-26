@@ -10,12 +10,12 @@ module NobleNames
       yaml.first
     end]
 
-    def self.particles
-      select_languages(MATCH_DATA['particles'])
+    def self.nobility_particles
+      select_languages(MATCH_DATA['nobility_particles'])
     end
 
-    def self.prefixes
-      select_languages(MATCH_DATA['prefixes'])
+    def self.nobility_prefixes
+      select_languages(MATCH_DATA['nobility_prefixes'])
     end
 
     def self.select_languages(collection)
