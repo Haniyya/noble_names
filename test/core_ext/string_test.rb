@@ -62,6 +62,31 @@ class StringTest < Minitest::Test
       'james of windsor'.to_title
   end
 
+  def test_dutch_title
+    assert_equal 'Frauke van de Niederlanden',
+      'frauke van de niederlanden'.to_title
+  end
+
+  def test_abreviation
+    assert_equal 'Peter v.d. Pfeffermühle',
+      'peter v.d. pfeffermühle'.to_title
+  end
+
+  def test_geographic_particle
+    assert_equal 'Peter in Hamburg',
+      'peter in hamburg'.to_title
+  end
+
+  def test_birth_name
+    assert_equal 'Petra Schneider geb. Müller',
+      'petra schneider geb. müller'.to_title
+  end
+
+  def test_zur
+    assert_equal 'Peter Müller zur Wohlfahrt',
+      'peter müller zur wohlfahrt'.to_title
+  end
+
   def test_single_language
     NobleNames.configure do |config|
       config.languages = :french

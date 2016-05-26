@@ -6,8 +6,13 @@ particles:
     - 'v.'
     - 'vom'
     - 'zum'
+    - 'zur'
     - 'der'
     - 'dem'
+    - 'den'
+    - 'in'
+    - 'v.d.'
+    - 'geb.'
   english:
     - 'of'
     - 'de'
@@ -22,5 +27,9 @@ particles:
     - 'de'
     - 'da'
     - 'du'
+  dutch:
+    - 'van'
+    - 'de'
+    - 'ter'
 
 
