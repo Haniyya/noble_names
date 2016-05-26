@@ -102,4 +102,21 @@ class StringTest < Minitest::Test
     assert_equal 'james mcdormer'.to_title,
       'James McDormer'
   end
+
+  def test_business_untouched_functionality
+    assert_equal 'kleinkleckersdorfer karnariernzüchter e.V.',
+      'kleinkleckersdorfer karnariernzüchter e.v.'.to_title
+    assert_equal 'grünheim Stahl Co. KG OHG',
+      'grünheim Stahl co. kg ohg'.to_title
+  end
+
+  def test_business_with_weird_name
+    assert_equal '2Trip Marketing',
+      '2Trip Marketing'.to_title
+  end
+
+  def test_business_with_small_name
+    assert_equal 'eBase Electronics',
+      'eBase electronics'.to_title
+  end
 end
