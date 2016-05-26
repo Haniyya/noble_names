@@ -1,0 +1,35 @@
+nobility_particles:
+  german:
+    - 'von'
+    - 'und'
+    - 'zu'
+    - 'v.'
+    - 'vom'
+    - 'zum'
+    - 'zur'
+    - 'der'
+    - 'dem'
+    - 'den'
+    - 'in'
+    - 'v.d.'
+    - 'geb.'
+  english:
+    - 'of'
+    - 'de'
+  french:
+    - 'de'
+    - 'le'
+    - 'la'
+  spanish:
+    - 'de'
+    - 'da'
+  portuguese:
+    - 'de'
+    - 'da'
+    - 'du'
+  dutch:
+    - 'van'
+    - 'de'
+    - 'ter'
+
+

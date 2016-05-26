@@ -1,0 +1,50 @@
+business_particles:
+  german:
+    - OHG
+    - KG
+    - GmbH
+    - Co.
+    - GbR
+    - AG
+    - PartG
+    - PartGmbBH
+    - e.V.
+    - r.V.
+    - KGaA
+  english:
+    - Ltd.
+    - CIC
+    - CIO
+    - LLP
+    - LP
+    - plc
+    - Ccc
+    - LLLP
+    - LP
+    - LLC
+    - LC
+    - PLLC
+    - Corp.
+    - Inc.
+  dutch:
+    - Mts
+    - vof
+    - cv
+    - bv
+    - nv
+  french:
+    - EI
+    - EURL
+    - SASU
+    - FCP
+    - SICAV
+    - GIE
+    - SEP
+    - SNC
+    - SCS
+    - SCA
+    - SARL
+    - SA
+    - SCOP
+    - SEM
+    - SAS
