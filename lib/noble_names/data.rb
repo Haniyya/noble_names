@@ -1,28 +1,18 @@
-require 'yaml'
-
 module NobleNames
   # The module responsible for maintaining and delivering
   # the match data as defined in the `data` directory.
   module Data
     DATA_PATH = File.expand_path('../../../data/', __FILE__).freeze
-    MATCH_DATA = Hash[Dir.glob(DATA_PATH + '/*.yml').collect do |f|
-      yaml = YAML.load_file(f)
-      yaml.first
-    end]
 
-    def self.nobility_particles
-      select_languages(MATCH_DATA['nobility_particles'])
-    end
+    @nobility_particles = MatchIndex.new('nobility_particles.yml')
+    @nobility_prefixes  = MatchIndex.new('nobility_prefixes.yml')
+    @business_particles = MatchIndex.new('business_particles.yml')
 
-    def self.nobility_prefixes
-      select_languages(MATCH_DATA['nobility_prefixes'])
-    end
-
-    def self.select_languages(collection)
-      collection
-        .select { |l| NobleNames.configuration.languages.include? l.to_sym }
-        .values
-        .flatten
+    # This returns an instance variable if it exists.
+    # Otherwise it calls super.
+    def self.method_missing(method, *args, &block)
+      var = instance_variable_get("@#{method}")
+      var ? var : super(method, args, block)
     end
   end
 end

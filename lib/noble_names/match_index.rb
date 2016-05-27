@@ -1,6 +1,9 @@
+require 'yaml'
+
 module NobleNames
   # A {MatchIndex} holds the data necessary for finding
   # prefixes and particles in Strings and checks them for it.
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
   # {MatchIndex}s use Hashes for finding particles to guarantee
@@ -8,6 +11,10 @@ module NobleNames
   # A {MatchIndex} has a lot of mutable state to cache as much matching
   # information as possible.
 >>>>>>> bd68028... Added more Documentation to MatchIndex.
+=======
+  # {MatchIndex}s use Hashes for finding particles to guarantee
+  # constant performance in big particle lists.
+>>>>>>> aab17bd... Removed obsolete code from data and main module. Made data a class instead.
   class MatchIndex
     attr_accessor :data
 
@@ -31,6 +38,7 @@ module NobleNames
       else
         @data = Hash[list]
       end
+      @lanugages = NobleNames.configuration.languages
     end
 
     # Returns and caches the particles of a MatchIndex.
@@ -50,6 +58,7 @@ module NobleNames
     # @return [Boolean] `true` if `word` is in the particle_list,
     #   `false` otherwise.
     def in_particle_list?(word)
+      reindex if @languages != NobleNames.configuration.languages
       particles.key? word
     end
 
@@ -60,7 +69,7 @@ module NobleNames
     def selected_data
       @selected_data ||=
         @data
-        .select { |l| NobleNames.configuration.languages.include? l.to_sym }
+        .select { |l| @languages.include? l.to_sym }
         .values
         .flatten
     end
@@ -73,6 +82,7 @@ module NobleNames
     # @example
     #   prefix?('mcdormer')           #=> 'mc'
     def prefix?(word)
+      reindex if @languages != NobleNames.configuration.languages
       prefixes.each do |pre|
         return pre if (word =~ Regexp.new(pre)) == 0
       end
@@ -80,5 +90,13 @@ module NobleNames
     end
 
     alias prefixes selected_data
+
+    # Resets the state of the MatchIndex
+    def reindex
+      @languages = NobleNames.configuration.languages
+      @selected_data = nil
+      @prefixes = nil
+      @particles = nil
+    end
   end
 end
