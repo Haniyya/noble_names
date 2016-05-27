@@ -3,18 +3,10 @@ require 'yaml'
 module NobleNames
   # A {MatchIndex} holds the data necessary for finding
   # prefixes and particles in Strings and checks them for it.
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
   # {MatchIndex}s use Hashes for finding particles to guarantee
   # constant performance in big particle lists.
   # A {MatchIndex} has a lot of mutable state to cache as much matching
   # information as possible.
->>>>>>> bd68028... Added more Documentation to MatchIndex.
-=======
-  # {MatchIndex}s use Hashes for finding particles to guarantee
-  # constant performance in big particle lists.
->>>>>>> aab17bd... Removed obsolete code from data and main module. Made data a class instead.
   class MatchIndex
     attr_accessor :data
 
