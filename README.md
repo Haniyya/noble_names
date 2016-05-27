@@ -39,7 +39,7 @@ my_string                             #=> "Joseph von und zu Reinbeck"
 ```
 
 ### Languages
-So far English, German, French, Spanish and Portuguese are supported.
+So far English, German, French, Spanish, Dutch and Portuguese are supported.
 By default all available languages are used. If you want to configure which one
 to use for your application, you can do it like so:
 ```ruby
@@ -50,6 +50,13 @@ end
 This way other language particles will be ignored.
 ```ruby
 "joseph von und zu reinbeck".to_title #=> "Joseph Von Und Zu Reinbeck"
+```
+
+### Business Names
+The current stance on business names is to only correct the business particle
+if need be and to leave the rest of the name alone.
+```ruby
+"bauhelm co. kg".to_title            #=> "bauhelm Co. KG"
 ```
 
 ## Development
