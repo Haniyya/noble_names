@@ -24,15 +24,23 @@ module NobleNames
 
   # Upcases the first small letters in each word,
   # seperated by hyphons.
+  # The word is also not capitalized if it already contains
+  # a capitalized letter. This is to allow Business Names
+  # to have custom capitalization.
   # But beware, words seperated by spaces stay small.
   # @return [String] the capitalized word.
   # @example
   #   capitalize('hans-ebert')  #=> 'Hans-Ebert'
   #   capitalize('john')        #=> 'John'
   #   capitalize('john james')  #=> 'John james'
+  #   capitalize('eBase')       #=> 'eBase'
   def self.capitalize(word)
-    word.gsub first_small_letters do |letter|
-      upcase(letter)
+    if word =~ /[A-Z]|Ä|Ö|Ü/
+      word
+    else
+      word.gsub first_small_letters do |letter|
+        upcase(letter)
+      end
     end
   end
 
@@ -57,6 +65,33 @@ module NobleNames
   # @return [Regexp] first_small_letters the regexp in question
   def self.first_small_letters
     /((\A.|(?<=\-).))/
+  end
+
+  # Checks weither a word is in the business particle list
+  # @param [String] word The word in question.
+  # @return [Boolean] result `true` if `word` is a business-particle
+  #   `false` otherwise
+  def self.business_particle?(word)
+    Data.business_particles.in_particle_list? word
+  end
+
+  # Corrects only the business particle and leaves the
+  # other words alone.
+  # @param [Array] words An array of words to be checked.
+  # @return [Array] words An array of corrected words.
+  # @example A Business Name
+  #   correct_business_particles([
+  #     'cool', 'and', 'hip', 'gmbh'
+  #   ])                    #=> ['cool', 'and', 'hip', 'GmbH']
+  def self.correct_business_particles(words)
+    words.map! do |word|
+      if business_particle?(word)
+        word
+          .replace(Data.business_particles.particles[word.downcase])
+      else
+        word
+      end
+    end
   end
 
   # Applies the core extension

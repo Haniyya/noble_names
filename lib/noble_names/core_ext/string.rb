@@ -21,7 +21,11 @@ module NobleNames
       #   str                     #=> 'Jamie of Windsor'
       def to_title!
         words = split(/\s+/)
-        words.map! { |w| NobleNames.noble_capitalize(w) }
+        if words.any? { |w| NobleNames.business_particle? w }
+          NobleNames.correct_business_particles words
+        else
+          words.map! { |w| NobleNames.noble_capitalize(w) }
+        end
         replace(words * ' ')
       end
     end
