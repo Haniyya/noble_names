@@ -1,3 +1,4 @@
+#-- encoding: UTF-8
 module NobleNames
   # The module responsible for maintaining and delivering
   # the match data as defined in the `data` directory.

@@ -1,3 +1,4 @@
+#-- encoding: UTF-8
 # :nodoc:
 module NobleNames
   SUPPORTED_LANGUAGES =
