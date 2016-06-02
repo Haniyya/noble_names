@@ -103,10 +103,10 @@ class StringTest < Minitest::Test
       'James McDormer'
   end
 
-  def test_business_untouched_functionality
-    assert_equal 'kleinkleckersdorfer karnariernzüchter e.V.',
+  def test_business_functionality
+    assert_equal 'Kleinkleckersdorfer Karnariernzüchter e.V.',
       'kleinkleckersdorfer karnariernzüchter e.v.'.to_title
-    assert_equal 'grünheim Stahl Co. KG OHG',
+    assert_equal 'Grünheim Stahl Co. KG OHG',
       'grünheim Stahl co. kg ohg'.to_title
   end
 
