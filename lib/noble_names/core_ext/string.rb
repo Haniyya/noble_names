@@ -1,4 +1,4 @@
-#-- encoding: UTF-8
+
 module NobleNames
   module CoreExt
     # This Module gives {String} the capability to

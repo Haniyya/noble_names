@@ -1,4 +1,4 @@
-#-- encoding: UTF-8
+
 require 'noble_names/match_index'
 require 'noble_names/version'
 require 'noble_names/config'

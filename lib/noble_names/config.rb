@@ -1,8 +1,8 @@
-#-- encoding: UTF-8
+
 # :nodoc:
 module NobleNames
   SUPPORTED_LANGUAGES =
-    [:german, :english, :french, :spanish, :portuguese, :dutch].freeze
+    %i[german english french spanish portuguese dutch].freeze
 
   class << self
     attr_writer :configuration

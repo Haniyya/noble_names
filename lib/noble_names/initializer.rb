@@ -1,4 +1,4 @@
-#-- encoding: UTF-8
+
 require_relative 'core_ext/string.rb'
 
 # :nodoc:

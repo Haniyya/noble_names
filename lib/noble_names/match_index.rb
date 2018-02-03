@@ -1,4 +1,4 @@
-#-- encoding: UTF-8
+
 require 'yaml'
 
 module NobleNames
