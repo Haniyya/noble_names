@@ -1,5 +1,8 @@
 # NobleNames
 [![Build Status](https://travis-ci.org/Haniyya/noble_names.svg?branch=master)](https://travis-ci.org/Haniyya/noble_names)
+[![Documentation
+Status](https://readthedocs.org/projects/noble-names/badge/?version=latest)](http://noble-names.readthedocs.io/en/latest/?badge=latest)
+[![Maintainability](https://api.codeclimate.com/v1/badges/614fe2d4f930a092e6f5/maintainability)](https://codeclimate.com/github/Haniyya/noble_names/maintainability)
 
 A small Gem to capitalize names with regard to nobility particles and prefixes.
 
