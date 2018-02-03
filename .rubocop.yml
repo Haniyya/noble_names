@@ -1,4 +1,4 @@
-Style/AlignParameters:
+Layout/AlignParameters:
   # Alignment of parameters in multi-line method calls.
   #
   # The `with_first_parameter` style aligns the following lines along the same
@@ -16,3 +16,11 @@ Style/AlignParameters:
   SupportedStyles:
     - with_first_parameter
     - with_fixed_indentation
+
+Metrics/BlockLength:
+  # Ignore the block lengths in these files as they are based on long blocks.
+  Exclude:
+    - 'Rakefile'
+    - '*.gemspec'
+    - '**/*.rake'
+    - 'test/**/*.rb'
