@@ -9,7 +9,8 @@ module NobleNames
   # A {MatchIndex} has a lot of mutable state to cache as much matching
   # information as possible.
   class MatchIndex
-    attr_accessor :data
+    attr_accessor :data, :languages
+    attr_writer :particles, :prefixes, :selected_data
 
     # Takes either a String or any Object and tries to
     # convert it to a hash.
@@ -51,7 +52,7 @@ module NobleNames
     # @return [Boolean] `true` if `word` is in the particle_list,
     #   `false` otherwise.
     def in_particle_list?(word)
-      reindex if @languages != NobleNames.configuration.languages
+      reindex if languages != NobleNames.configuration.languages
       particles.key? word
     end
 
@@ -61,8 +62,8 @@ module NobleNames
     #   used languages.
     def selected_data
       @selected_data ||=
-        @data
-        .select { |l| @languages.include? l.to_sym }
+        data
+        .select { |l| languages.include? l.to_sym }
         .values
         .flatten
     end
@@ -75,7 +76,7 @@ module NobleNames
     # @example
     #   prefix?('mcdormer')           #=> 'mc'
     def prefix?(word)
-      reindex if @languages != NobleNames.configuration.languages
+      reindex if languages != NobleNames.configuration.languages
       prefixes.each do |pre|
         return pre unless (word =~ Regexp.new('^' + pre.to_s)).nil?
       end
@@ -86,10 +87,10 @@ module NobleNames
 
     # Resets the state of the MatchIndex
     def reindex
-      @languages = NobleNames.configuration.languages
-      @selected_data = nil
-      @prefixes = nil
-      @particles = nil
+      self.languages     = NobleNames.configuration.languages
+      self.selected_data = nil
+      self.prefixes      = nil
+      self.particles     = nil
     end
   end
 end
