@@ -67,6 +67,11 @@ class StringTest < Minitest::Test
       'frauke van de niederlanden'.to_title
   end
 
+  def test_spanish_name
+    assert_equal 'Villanueva del Río',
+      'villanueva del río'.to_title
+  end
+
   def test_abreviation
     assert_equal 'Peter v.d. Pfeffermühle',
       'peter v.d. pfeffermühle'.to_title
