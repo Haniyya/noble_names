@@ -10,4 +10,5 @@
 
 ## master
 
+* Added support for native UTF-8 upcasing for ruby `>= 2.4`.
 * Drop support for ruby 1.9.3 and updated development dependencies.
