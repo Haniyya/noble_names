@@ -1,4 +1,4 @@
-#-- encoding: UTF-8
+
 module NobleNames
   # The module responsible for maintaining and delivering
   # the match data as defined in the `data` directory.
@@ -13,7 +13,13 @@ module NobleNames
     # Otherwise it calls super.
     def self.method_missing(method, *args, &block)
       var = instance_variable_get("@#{method}")
-      var ? var : super(method, args, block)
+      var ? var : super
+    end
+
+    # Remember to define respond_to_missing.
+    def self.respond_to_missing?(method, *args, &block)
+      var = instance_variable_get("@#{method}")
+      var ? true : super
     end
   end
 end

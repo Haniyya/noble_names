@@ -2,14 +2,12 @@ language: ruby
 rvm:
   - jruby
   - 2.2.4
-  - 2.2.1
-  - 1.9.3
-  - 2.3.0
-before_install: gem install bundler flay flog rubocop
+  - 2.3.3
+  - 2.4.1
+  - 2.5.0
 install:
   - bundle install --retry=3
 script:
-  - bundle exec rake source_encoding
   - bundle exec rake test
   - bundle exec rubocop
   - bundle exec flay

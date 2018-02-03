@@ -1,4 +1,4 @@
-#-- encoding: UTF-8
+
 require_relative '../test_helper.rb'
 
 class StringTest < Minitest::Test
