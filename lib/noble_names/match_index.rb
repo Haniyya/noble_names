@@ -9,8 +9,7 @@ module NobleNames
   # A {MatchIndex} has a lot of mutable state to cache as much matching
   # information as possible.
   class MatchIndex
-    attr_accessor :data, :languages
-    attr_writer :particles, :prefixes, :selected_data
+    attr_accessor :data
 
     # Takes either a String or any Object and tries to
     # convert it to a hash.
@@ -92,5 +91,10 @@ module NobleNames
       self.prefixes      = nil
       self.particles     = nil
     end
+
+    private
+
+    attr_accessor :languages
+    attr_writer :particles, :prefixes, :selected_data
   end
 end
