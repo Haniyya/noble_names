@@ -10,7 +10,6 @@ rvm:
 install:
   - bundle install --retry=3
 script:
-  - bundle exec rake source_encoding
   - bundle exec rake test
   - bundle exec rubocop
   - bundle exec flay
