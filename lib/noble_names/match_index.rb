@@ -77,7 +77,7 @@ module NobleNames
     def prefix?(word)
       reindex if @languages != NobleNames.configuration.languages
       prefixes.each do |pre|
-        return pre if (word =~ Regexp.new(pre)) == 0
+        return pre if (word =~ Regexp.new(pre)).zero?
       end
       nil
     end
