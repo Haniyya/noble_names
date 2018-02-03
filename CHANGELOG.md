@@ -10,6 +10,8 @@
 
 ## master
 
+### 1.0.0
+
 * Added link to rubydocs documentation.
 * Added project to code-climate.
 * Added support for native UTF-8 upcasing for ruby `>= 2.4`.
