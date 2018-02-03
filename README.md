@@ -84,8 +84,6 @@ therefore compatible with the following ruby versions:
 - 2.4.3
 - 2.3.0
 - 2.2.4
-- 2.2.1
-- 1.9.3
 
 Other verions might work to but are not tested in ci so far.
 
