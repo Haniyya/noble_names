@@ -72,6 +72,7 @@ To install this gem onto your local machine, run `bundle exec rake install`.
 - Fork it ( https://github.com/Haniyya/noble_names/fork )
 - Create your feature branch (git checkout -b my-new-feature)
 - Commit your changes (git commit -am 'Add some feature')
+- Add your changes to `CHANGELOG.md`.
 - Push to the branch (git push origin my-new-feature)
 - Create a new Pull Request
 
