@@ -10,6 +10,8 @@
 
 ## master
 
+* Changed `da` to `del` in Spanish.
+
 ### 1.0.0
 
 * Added link to rubydocs documentation.
