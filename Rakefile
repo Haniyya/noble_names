@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 require 'rake/testtask'
 
@@ -28,11 +29,9 @@ task :source_encoding do
       # We have a shebang. Encoding comment is to put on the second line
       file_content.sub!(/(\n|\r\n)/, "\\1#{magic_comment}\\1")
     else
-      file_content = magic_comment + "\n" + file_content
+      file_content = "#{magic_comment}\n#{file_content}"
     end
 
-    File.open(file_name, 'w') do |file|
-      file.write file_content
-    end
+    File.write(file_name, file_content)
   end
 end

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 require 'noble_names/match_index'
 require 'noble_names/version'
@@ -39,7 +40,7 @@ module NobleNames
     #   capitalize('john james')  #=> 'John james'
     #   capitalize('eBase')       #=> 'eBase'
     def capitalize(word)
-      if word =~ /[A-Z]|Ä|Ö|Ü/
+      if word.match?(/[A-Z]|Ä|Ö|Ü/)
         word
       else
         word.gsub first_small_letters do |letter|
@@ -77,28 +78,23 @@ module NobleNames
 
     private
 
+    MUTATED_UPCASE_VOWELS = { 'ä' => 'Ä', 'ü' => 'Ü', 'ö' => 'Ö' }.freeze
+
     # Upcases a letter even if it is a german mutated vowel.
     # @return [String] letter the upcased letter.
     # @example
     #   upcase('t')         #=> 'T'
     def upcase(letter)
       return letter.upcase if STANDARD_UPACE_SUPPORT
-      match = letter.match(/ä|ö|ü/)
-      if match
-        case match.to_s
-        when 'ä' then 'Ä'
-        when 'ö' then 'Ö'
-        when 'ü' then 'Ü'
-        end
-      else letter.upcase
-      end
+
+      MUTATED_UPCASE_VOWELS[letter] || letter.upcase
     end
 
     # A Regex literal to find the first letter of a string
     # as well as the first letter after a hyphon.
     # @return [Regexp] first_small_letters the regexp in question
     def first_small_letters
-      /((\A.|(?<=\-).))/
+      /((\A.|(?<=-).))/
     end
   end
 

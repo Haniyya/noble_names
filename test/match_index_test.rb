@@ -1,5 +1,6 @@
+# frozen_string_literal: true
 
-require_relative 'test_helper.rb'
+require_relative 'test_helper'
 
 class MatchIndexTest < Minitest::Test
   def setup
@@ -9,7 +10,7 @@ class MatchIndexTest < Minitest::Test
 
   def test_prefix_method
     assert_equal 'mc',
-      @mip.prefix?('mcdormer')
+                 @mip.prefix?('mcdormer')
   end
 
   def test_has_loaded_particles

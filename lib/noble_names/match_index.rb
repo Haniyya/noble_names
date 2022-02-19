@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 require 'yaml'
 
@@ -29,7 +30,7 @@ module NobleNames
         @data = YAML.load_file(File.expand_path(list, Data::DATA_PATH))
         @data = @data.values.first
       else
-        @data = Hash[list]
+        @data = list.to_h
       end
       @lanugages = NobleNames.configuration.languages
     end
@@ -43,7 +44,7 @@ module NobleNames
     #   MatchIndex.new('nobility_particles.yml')
     #     .particles['von']                          #=> 'von'
     def particles
-      @particles ||= Hash[selected_data.collect { |v| [v.downcase, v] }]
+      @particles ||= selected_data.collect { |v| [v.downcase, v] }.to_h
     end
 
     # Checks weither a word is in the nobility particle list.
@@ -77,7 +78,7 @@ module NobleNames
     def prefix?(word)
       reindex if languages != NobleNames.configuration.languages
       prefixes.each do |pre|
-        return pre unless (word =~ Regexp.new('^' + pre.to_s)).nil?
+        return pre unless (word =~ Regexp.new("^#{pre}")).nil?
       end
       nil
     end
