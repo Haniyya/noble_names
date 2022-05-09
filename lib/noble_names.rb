@@ -71,7 +71,7 @@ module NobleNames
           word
             .replace(Data.business_particles.particles[word.downcase])
         else
-          noble_capitalize(word)
+          word
         end
       end
     end
