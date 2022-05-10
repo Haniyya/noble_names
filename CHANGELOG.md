@@ -12,6 +12,7 @@
 
 * Changed `da` to `del` in Spanish.
 * Fixed processing of business names to work as described in README: only fix the business particles and leave the rest of the name alone.
+* Make recognition of business names case insensitive
 
 ### 1.0.0
 

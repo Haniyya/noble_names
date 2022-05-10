@@ -120,6 +120,13 @@ class StringTest < Minitest::Test
                  'bauhelm co. kg'.to_title
   end
 
+  def test_business_part_with_wrong_capital_letters
+    assert_equal 'Schneider & söhne GmbH & Co. KG',
+                 'Schneider & söhne Gmbh & Co. KG'.to_title
+    assert_equal 'easybill GmbH',
+                 'easybill Gmbh'.to_title
+  end
+  
   def test_business_without_business_particle_is_treated_as_name
     assert_equal '2Trip Marketing',
                  '2Trip Marketing'.to_title
