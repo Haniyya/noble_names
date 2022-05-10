@@ -133,4 +133,10 @@ class StringTest < Minitest::Test
     assert_equal 'eBase Electronics',
                  'eBase electronics'.to_title
   end
+  
+  def test_empty_string
+    assert_equal '',
+                 ''.to_title
+  end
+
 end
