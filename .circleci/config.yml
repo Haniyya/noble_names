@@ -11,22 +11,33 @@ orbs:
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
   build:
+    parameters:
+      ruby-version:
+        type: string
     docker:
       - image: cimg/ruby:3.1.0
     executor: ruby/default
     steps:
       - checkout
+      - ruby/install:
+          version: << parameters.ruby-version >>
       - run:
-          name: Which bundler?
-          command: bundle -v
-      - ruby/install-deps:
-          with-cache: false
+          name: bundle install
+          command: bundle install
       - ruby/rubocop-check
+      - run:
+          name: Minitest
+          command: bundle exec rake
+      - run:
+          name: Flay
+          command: bundle exec flay
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  sample: # This is the name of the workflow, feel free to change it to better match your workflow.
-    # Inside the workflow, you define the jobs you want to run.
+  all-tests:
     jobs:
-      - build
+      - build:
+          matix:
+            parameters:
+              ruby-version: ["2.6.0", "2.7.0", "3.1.2", "jruby"]
