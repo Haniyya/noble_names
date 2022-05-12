@@ -21,10 +21,12 @@
 * Added support for native UTF-8 upcasing for ruby `>= 2.4`.
 * Drop support for ruby 1.9.3 and updated development dependencies.
 
-### 1.0.2
+### 1.1.0
 
 * Merged PR #5 by @judith-easybill:
   * Fixes business particle handling
   * Adds associated tests
   * Replaced mentions of `master` with `main`
 * Added ruby 3.1.2 to tested versions
+* Dropped support for ruby < 2.5
+* Added testing for ruby 3.1.2

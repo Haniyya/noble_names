@@ -44,7 +44,7 @@ module NobleNames
     #   MatchIndex.new('nobility_particles.yml')
     #     .particles['von']                          #=> 'von'
     def particles
-      @particles ||= selected_data.collect { |v| [v.downcase, v] }.to_h
+      @particles ||= selected_data.to_h { |v| [v.downcase, v] }
     end
 
     # Checks weither a word is in the nobility particle list.
