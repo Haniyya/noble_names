@@ -23,7 +23,7 @@ jobs:
           version: << parameters.ruby-version >>
       - run:
           name: bundle install
-          command: bundle install
+          command: gem install bundler && bundle install
       - ruby/rubocop-check
       - run:
           name: Minitest
