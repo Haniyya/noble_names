@@ -1,0 +1,43 @@
+# Use the latest 2.1 version of CircleCI pipeline process engine.
+# See: https://circleci.com/docs/2.0/configuration-reference
+version: 2.1
+
+# Orbs are reusable packages of CircleCI configuration that you may share across projects, enabling you to create encapsulated, parameterized commands, jobs, and executors that can be used across multiple projects.
+# See: https://circleci.com/docs/2.0/orb-intro/
+orbs:
+  ruby: circleci/ruby@1.7.1
+
+# Define a job to be invoked later in a workflow.
+# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
+jobs:
+  build:
+    parameters:
+      ruby-version:
+        type: string
+    docker:
+      - image: cimg/ruby:3.1.0
+    executor: ruby/default
+    steps:
+      - checkout
+      - ruby/install:
+          version: << parameters.ruby-version >>
+      - run:
+          name: bundle install
+          command: gem install bundler && bundle install
+      - ruby/rubocop-check
+      - run:
+          name: Minitest
+          command: bundle exec rake
+      - run:
+          name: Flay
+          command: bundle exec flay
+
+# Invoke jobs via workflows
+# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
+workflows:
+  all-tests:
+    jobs:
+      - build:
+          matrix:
+            parameters:
+              ruby-version: ["2.6.0", "2.7.0", "3.1.2", "jruby-9.3.4.0"]
