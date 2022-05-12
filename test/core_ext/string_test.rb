@@ -108,20 +108,35 @@ class StringTest < Minitest::Test
                  'James McDormer'
   end
 
-  def test_business_functionality
+  def test_business_functionality_updates_business_particles
     assert_equal 'Kleinkleckersdorfer Karnariernzüchter e.V.',
-                 'kleinkleckersdorfer karnariernzüchter e.v.'.to_title
-    assert_equal 'Grünheim Stahl Co. KG OHG',
-                 'grünheim Stahl co. kg ohg'.to_title
+                 'Kleinkleckersdorfer Karnariernzüchter e.v.'.to_title
   end
 
-  def test_business_with_weird_name
+  def test_business_functionality_keeps_business_names_as_is
+    assert_equal 'grünheim Stahl Co. KG OHG',
+                 'grünheim Stahl co. kg ohg'.to_title
+    assert_equal 'bauhelm Co. KG',
+                 'bauhelm co. kg'.to_title
+  end
+
+  def test_business_part_with_wrong_capital_letters
+    assert_equal 'Schneider & söhne GmbH & Co. KG',
+                 'Schneider & söhne Gmbh & Co. KG'.to_title
+    assert_equal 'easybill GmbH',
+                 'easybill Gmbh'.to_title
+  end
+  
+  def test_business_without_business_particle_is_treated_as_name
     assert_equal '2Trip Marketing',
                  '2Trip Marketing'.to_title
-  end
-
-  def test_business_with_small_name
     assert_equal 'eBase Electronics',
                  'eBase electronics'.to_title
   end
+  
+  def test_empty_string
+    assert_equal '',
+                 ''.to_title
+  end
+
 end

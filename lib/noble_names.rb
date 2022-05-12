@@ -49,12 +49,12 @@ module NobleNames
       end
     end
 
-    # Checks weither a word is in the business particle list
+    # Checks whether a word is in the business particle list
     # @param [String] word The word in question.
     # @return [Boolean] result `true` if `word` is a business-particle
     #   `false` otherwise
     def business_particle?(word)
-      Data.business_particles.in_particle_list? word
+      Data.business_particles.in_particle_list? word.downcase
     end
 
     # Corrects only the business particle and leaves the
@@ -71,7 +71,7 @@ module NobleNames
           word
             .replace(Data.business_particles.particles[word.downcase])
         else
-          noble_capitalize(word)
+          word
         end
       end
     end
