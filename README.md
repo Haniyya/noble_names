@@ -83,10 +83,7 @@ This gem has no runtime-dependencies outside of the standard library and is
 therefore compatible with the following ruby versions:
 
 - jruby
-- 2.5.0
-- 2.4.3
-- 2.3.0
-- 2.2.4
+- 2.6.0
 - 2.7.0
 - 3.1.2
 

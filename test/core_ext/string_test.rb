@@ -126,17 +126,16 @@ class StringTest < Minitest::Test
     assert_equal 'easybill GmbH',
                  'easybill Gmbh'.to_title
   end
-  
+
   def test_business_without_business_particle_is_treated_as_name
     assert_equal '2Trip Marketing',
                  '2Trip Marketing'.to_title
     assert_equal 'eBase Electronics',
                  'eBase electronics'.to_title
   end
-  
+
   def test_empty_string
     assert_equal '',
                  ''.to_title
   end
-
 end

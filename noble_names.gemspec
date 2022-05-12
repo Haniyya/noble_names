@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.version       = NobleNames::VERSION
   spec.authors       = ['Paul Martensen']
   spec.email         = ['paul.martensen@gmx.de']
-  spec.required_ruby_version = '2.5'
+  spec.required_ruby_version = '>= 2.6.0'
 
   spec.summary = <<-SUM
     A gem that titleizes strings while respecting certain linguistic differences.
@@ -41,7 +41,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'flay', '~> 2'
   spec.add_development_dependency 'minitest', '~> 5'
   spec.add_development_dependency 'rake', '~> 12'
-  spec.add_development_dependency 'rubocop', '~> 1.25'
+  spec.add_development_dependency 'rubocop', '~> 1.28'
   spec.add_development_dependency 'rubocop-minitest', '~> 0.17'
   spec.metadata['rubygems_mfa_required'] = 'true'
 end

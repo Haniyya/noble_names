@@ -1,7 +1,7 @@
 
 AllCops:
   NewCops: enable
-  TargetRubyVersion: 2.5
+  TargetRubyVersion: 2.6
   SuggestExtensions: false
 
 Metrics/BlockLength:
@@ -10,4 +10,9 @@ Metrics/BlockLength:
     - 'Rakefile'
     - '*.gemspec'
     - '**/*.rake'
+    - 'test/**/*.rb'
+
+Metrics/ClassLength:
+  # Ignore the block lengths in these files as they are based on long blocks.
+  Exclude:
     - 'test/**/*.rb'
