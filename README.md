@@ -1,7 +1,6 @@
 # NobleNames
 [![Build Status](https://travis-ci.org/Haniyya/noble_names.svg?branch=master)](https://travis-ci.org/Haniyya/noble_names)
-[![Documentation
-Status](https://readthedocs.org/projects/noble-names/badge/?version=latest)](http://www.rubydoc.info/gems/noble_names)
+[![Documentation Status](https://readthedocs.org/projects/noble-names/badge/?version=latest)](http://www.rubydoc.info/gems/noble_names)
 [![Maintainability](https://api.codeclimate.com/v1/badges/614fe2d4f930a092e6f5/maintainability)](https://codeclimate.com/github/Haniyya/noble_names/maintainability)
 
 A small Gem to capitalize names with regard to nobility particles and prefixes.
@@ -88,6 +87,8 @@ therefore compatible with the following ruby versions:
 - 2.4.3
 - 2.3.0
 - 2.2.4
+- 2.7.0
+- 3.1.2
 
 Other verions might work to but are not tested in ci so far.
 
